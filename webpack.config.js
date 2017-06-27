@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "ProjectGimme",
+      title: "AwesomeSite",
       template: './src/index.html',
       minify: {
         collapseWhitespace: true
@@ -40,5 +40,11 @@ module.exports = {
       hash: true,
       favicon: './src/favicon.ico'
     }),
-    new ExtractTextPlugin('style.css')]
+    new ExtractTextPlugin('style.css')],
+  devServer: {
+    compress: true,
+    port: 9000,
+    stats: "errors-only"
+  }
+
 }

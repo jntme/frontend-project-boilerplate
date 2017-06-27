@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "node_modules/.bin/webpack-dev-server --color",
     "prod": "webpack -p"
   },
   "keywords": [],
