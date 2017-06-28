@@ -1,5 +1,12 @@
 body {
-  background: lightgrey;
+  font-family: Tahoma, Geneva, sans-serif;
+  height: 100%;
+  min-height: 100%;
+
+  background-image: url('./images/example-logo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 
   p { 
     color: red;
