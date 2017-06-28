@@ -3,6 +3,8 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: {
     index: './src/app.js',
@@ -11,7 +13,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname + "/dist"),
-
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -46,7 +48,7 @@ module.exports = {
       title: "Index Page",
       template: './src/index.html',
       minify: {
-        collapseWhitespace: true
+        collapseWhitespace: isProd
       },
       hash: true,
       excludeChunks: ['contact'],
@@ -57,7 +59,7 @@ module.exports = {
       template: './src/contact.html',
       chunks: ['contact'],
       minify: {
-        collapseWhitespace: true
+        collapseWhitespace: isProd
       },
       filename: 'contact.html',
       hash: true
@@ -65,6 +67,8 @@ module.exports = {
     new ExtractTextPlugin('style.css'),
   ],
   devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     compress: true,
     port: 9000,
     stats: "errors-only"

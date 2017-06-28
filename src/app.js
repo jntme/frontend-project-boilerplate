@@ -7,3 +7,7 @@ myArr.forEach(x => {
 });
 
 console.log("Hello from app.js!");
+
+var node = document.createElement("h1");
+node.innerHTML = "This is a later added thing.";
+document.body.appendChild(node);

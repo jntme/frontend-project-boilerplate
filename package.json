@@ -1,11 +1,11 @@
 {
-  "name": "webPackTest",
+  "name": "frontend-project-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack-dev-server --color --open",
-    "prod": "npm run clean && webpack -p",
+    "prod": "npm run clean && NODE_ENV=production webpack -p",
     "clean": "rimraf ./dist/*"
   },
   "keywords": [],
